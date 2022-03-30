@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
 /**
-* The code gets a number from the user and calculates it's factorial
-* Only works for natural numbers as outlined by the factorial function
+* The code gets a number from the user and calculates it's factorial.
+* Only works for natural numbers as outlined by the factorial function.
 * 
 *
 * @author  Liam Csiffary
@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class factorial {
 
   // the function which calculates the factorial
-  public static int factorialCalcer(int number) {
+  public static float factorialCalcer(float number) {
     // base cases, if either 0 or 1 return 1
     if (number == 0 || number == 1) {
       return 1;
@@ -25,7 +25,7 @@ public class factorial {
     }
   }
 
-  // main
+  // main function
   public static void main(String[] args) throws Exception {
     // greets user
     System.out.println("Welcome! This program calculates the factorial of a given number!");
@@ -33,7 +33,7 @@ public class factorial {
     // defines vars
     Scanner scanner = new Scanner(System.in);
     String userInputString = "";
-    int userInputInt = 0;
+    float userInputLong = 0;
 
     // while true, breaks if the user inputs exit
     while (true) {
@@ -48,10 +48,10 @@ public class factorial {
       // tries to convert to an int, then makes sure it's positive
       // the int() function returns an error if its a decimal
       try {
-        userInputInt = Integer.parseInt(userInputString);
-        if (userInputInt > 0) {
-          int answer = factorialCalcer(userInputInt);
-          System.out.println(userInputInt + "'s factorial is " + answer);
+        userInputLong = Float.parseFloat(userInputString);
+        if (userInputLong > 0) {
+          float answer = factorialCalcer(userInputLong);
+          System.out.println(userInputLong + "'s factorial is " + answer);
         } else {
           System.out.println("Number must be natural (postive and whole)");
         }
