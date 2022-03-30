@@ -6,7 +6,7 @@ import java.util.Scanner;
 * 
 *
 * @author  Liam Csiffary
-* @version 1.11
+* @version 1.12
 * @since   2022-03-29
 */
 
@@ -33,7 +33,7 @@ public class factorial {
     // defines vars
     Scanner scanner = new Scanner(System.in);
     String userInputString = "";
-    float userInputLong = 0;
+    float userInputFloat = 0f;
 
     // while true, breaks if the user inputs exit
     while (true) {
@@ -48,10 +48,10 @@ public class factorial {
       // tries to convert to an int, then makes sure it's positive
       // the int() function returns an error if its a decimal
       try {
-        userInputLong = Float.parseFloat(userInputString);
-        if (userInputLong >= 0) {
-          float answer = factorialCalcer(userInputLong);
-          System.out.println(userInputLong + "'s factorial is " + answer);
+        userInputFloat = Float.parseFloat(userInputString);
+        if (userInputFloat >= 0 && userInputFloat % 1f == 0f) {
+          float answer = factorialCalcer(userInputFloat);
+          System.out.println(userInputFloat + "'s factorial is " + answer);
         } else {
           System.out.println("Number must be natural (positive and whole)");
         }
