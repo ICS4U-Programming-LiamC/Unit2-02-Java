@@ -6,7 +6,7 @@ import java.util.Scanner;
 * 
 *
 * @author  Liam Csiffary
-* @version 1.12
+* @version 1.13
 * @since   2022-03-29
 */
 
@@ -37,13 +37,15 @@ public class factorial {
 
     // while true, breaks if the user inputs exit
     while (true) {
-      if (userInputString.equals("exit")) {
-        break;
-      }
 
       // gets users input
       System.out.println("Please input a whole positive int (exit to exit): ");
-      userInputString = scanner.nextLine();
+      userInputString = scanner.nextLine().toLowerCase();
+
+      // breaks if user inputed exit
+      if (userInputString.equals("exit")) {
+        break;
+      }
 
       // tries to convert to an int, then makes sure it's positive
       // the int() function returns an error if its a decimal
