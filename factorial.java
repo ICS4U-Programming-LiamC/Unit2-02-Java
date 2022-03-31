@@ -6,7 +6,7 @@ import java.util.Scanner;
 * 
 *
 * @author  Liam Csiffary
-* @version 1.13
+* @version 1.2
 * @since   2022-03-29
 */
 
@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class factorial {
 
   // the function which calculates the factorial
-  public static float factorialCalcer(float number) {
+  public static double factorialCalcer(double number) {
     // base cases, if either 0 or 1 return 1
     if (number == 0 || number == 1) {
       return 1;
@@ -33,13 +33,13 @@ public class factorial {
     // defines vars
     Scanner scanner = new Scanner(System.in);
     String userInputString = "";
-    float userInputFloat = 0f;
+    double userInputDouble = 0d;
 
     // while true, breaks if the user inputs exit
     while (true) {
 
       // gets users input
-      System.out.println("Please input a whole positive int (exit to exit): ");
+      System.out.println("Please input a natural number (exit to exit): ");
       userInputString = scanner.nextLine().toLowerCase();
 
       // breaks if user inputed exit
@@ -50,10 +50,10 @@ public class factorial {
       // tries to convert to an int, then makes sure it's positive
       // the int() function returns an error if its a decimal
       try {
-        userInputFloat = Float.parseFloat(userInputString);
-        if (userInputFloat >= 0 && userInputFloat % 1f == 0f) {
-          float answer = factorialCalcer(userInputFloat);
-          System.out.println(userInputFloat + "'s factorial is " + answer);
+        userInputDouble = Double.parseDouble(userInputString);
+        if (userInputDouble >= 0 && userInputDouble % 1d == 0d) {
+          double answer = factorialCalcer(userInputDouble);
+          System.out.println(userInputDouble + "'s factorial is " + answer);
         } else {
           System.out.println("Number must be natural (positive and whole)");
         }
